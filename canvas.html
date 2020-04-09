@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        canvas { border: 1px solid #0000ff; }
+    </style>
+</head>
+<body>
+    <canvas width="200" height="100"></canvas>
+    <img src="/cover.jpg">
+    <script>
+        var canvas = document.querySelector("canvas");
+        var ctx = canvas.getContext("2d");
+        // 사선
+        ctx.moveTo(0,0);
+        ctx.lineTo(200,100);
+        ctx.stroke();
+        // 사각형
+        ctx.fillStyle = "#ff0000";
+        ctx.fillRect(0,0,150,75);
+        // 원
+        ctx.beginPath();
+        ctx.arc(95,50,40,0,2*Math.PI); 
+        ctx.stroke();
+        // 글쓰기
+        ctx.font = "16px D2Coding";
+        ctx.fillStyle = "#FF0000"
+        ctx.textAlign = "center"
+        ctx.fillText("hello", canvas.width/2, canvas.height/2);
+
+        var img = document.querySelector("img");
+        ctx.drawImage(img, 10, 10);
+    </script>
+</body>
+</html>
